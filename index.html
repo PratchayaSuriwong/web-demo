@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Launch Desk</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="Project navigation">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">LD</span>
+          <div>
+            <h1>Launch Desk</h1>
+            <p>Project control room</p>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="Views">
+          <button class="nav-item active" type="button" data-view="overview">
+            <span aria-hidden="true">●</span>
+            Overview
+          </button>
+          <button class="nav-item" type="button" data-view="active">
+            <span aria-hidden="true">◆</span>
+            Active
+          </button>
+          <button class="nav-item" type="button" data-view="done">
+            <span aria-hidden="true">■</span>
+            Done
+          </button>
+        </nav>
+
+        <section class="status-panel" aria-label="Today status">
+          <p class="eyebrow">Today</p>
+          <strong id="todayCount">0 active tasks</strong>
+          <span id="nextTask">Add a task to begin</span>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Interactive HTML / CSS / JS app</p>
+            <h2>Ship the next small thing</h2>
+          </div>
+          <button class="primary-action" id="seedButton" type="button">Load demo plan</button>
+        </header>
+
+        <section class="metrics-grid" aria-label="Project metrics">
+          <article class="metric-card">
+            <span>Completion</span>
+            <strong id="completionMetric">0%</strong>
+          </article>
+          <article class="metric-card">
+            <span>Active</span>
+            <strong id="activeMetric">0</strong>
+          </article>
+          <article class="metric-card">
+            <span>High focus</span>
+            <strong id="focusMetric">0</strong>
+          </article>
+        </section>
+
+        <section class="board-layout">
+          <form class="task-form" id="taskForm">
+            <label for="taskTitle">Task</label>
+            <input id="taskTitle" name="taskTitle" type="text" placeholder="Design signup flow" required />
+
+            <div class="form-row">
+              <label for="taskPriority">Priority</label>
+              <select id="taskPriority" name="taskPriority">
+                <option value="High">High</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+
+            <button type="submit">Add task</button>
+          </form>
+
+          <section class="progress-panel" aria-label="Progress chart">
+            <div class="chart-frame">
+              <canvas id="progressCanvas" width="280" height="280" aria-label="Completion chart"></canvas>
+              <div class="chart-center">
+                <strong id="chartValue">0%</strong>
+                <span>complete</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="task-list-panel">
+            <div class="list-header">
+              <h3>Work queue</h3>
+              <button class="ghost-button" id="clearDoneButton" type="button">Clear done</button>
+            </div>
+            <ul class="task-list" id="taskList" aria-live="polite"></ul>
+            <p class="empty-state" id="emptyState">No tasks match this view.</p>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

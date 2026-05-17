@@ -1,24 +1,45 @@
 # web-demo
 
-## Launch Desk
+## GreenLoop Bottle Market
 
-A small static web app built with HTML, CSS, and JavaScript.
+PHP website concept for a plastic bottle purchasing business. The site presents a seller platform where customers can download an app, record bottle quantities, estimate value, and request pickup.
+
+## Structure
+
+```text
+index.php
+.htaccess
+assets/
+  css/main.css
+  js/main.js
+  images/
+includes/
+  header.php
+  footer.php
+  navbar.php
+  config.php
+pages/
+  home/index.php
+  about/index.php
+  contact/index.php
+  products/index.php
+  404/index.php
+controllers/
+  route.php
+```
 
 ## Run locally
 
-Open `index.html` directly in a browser, or serve the folder:
+This project requires PHP:
 
 ```bash
-python3 -m http.server 4173
+php -S 127.0.0.1:4173
 ```
 
-Then visit `http://127.0.0.1:4173`.
+Then open:
 
-## Features
+```text
+http://127.0.0.1:4173
+```
 
-- Add project tasks with priority
-- Toggle tasks between active and done
-- Filter overview, active, and done views
-- Clear completed tasks
-- Load a demo plan
-- Persist tasks in `localStorage`
+GitHub Pages does not execute PHP. Use a PHP-enabled host for production, or convert the pages to static HTML for GitHub Pages.

@@ -1,4 +1,6 @@
-# Launch Desk
+# web-demo
+
+## Launch Desk
 
 A small static web app built with HTML, CSS, and JavaScript.
 
